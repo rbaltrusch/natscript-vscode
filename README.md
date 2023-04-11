@@ -1,6 +1,6 @@
 # Natscript VS Code extension README
 
-This is VS Code extension for the Natscript programming language.
+This is VS Code extension for the [Natscript](https://github.com/rbaltrusch/python_interpreter) programming language.
 
 ## Features
 
