@@ -1,0 +1,25 @@
+{
+  "name": "natscript",
+  "displayName": "Natscript",
+  "description": "This is the language support extension for Natscript code.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "natscript",
+      "aliases": ["Natscript", "natscript"],
+      "extensions": [".nat"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "natscript",
+      "scopeName": "source.natscript",
+      "path": "./syntaxes/natscript.tmLanguage.json"
+    }]
+  }
+}

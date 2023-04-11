@@ -1,0 +1,226 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Natscript",
+	"patterns": [
+		{
+			"include": "#expession"
+		},
+		{
+			"include": "#keyword"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#skip-token"
+		}
+	],
+	"repository": {
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control.natscript",
+					"match": "\\b(skip|break|return|if|then|else|for|each|in|while|import|from|try|catch|raise|exit)\\b"
+				},
+				{
+					"name": "keyword.operator.flow",
+					"match": "\\b(define|expecting|defaulting|call|with)\\b"
+				},
+				{
+					"name": "storage.type.class.natscript",
+					"match": "\\b(structure)\\b"
+				},
+				{
+					"name": "storage.type.function.natscript",
+					"match": "\\b(function)\\b"
+				},
+				{
+					"name": "storage.modifier.natscript",
+					"match": "\\b(private|constant)\\b"
+				},
+				{
+					"include": "#operator"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"name": "keyword.operator.new.natscript",
+					"match": "\\b(set|new)\\b"
+				},
+				{
+					"name": "keyword.operator.logical.natscript",
+					"match": "\\b(checked|not|all|any|some|none|contains|identical|greater|less|equal)\\b"
+				},
+				{
+					"name": "invalid.illegal.operator.natscript",
+					"match": "`|~|\\!|@|\\$|%|\\^|&|\\*|\\(|\\)|\\+|\\=|\\\\|\\||\\?|\\/|\\>|\\<|\\;|\\:|\\'"
+				},
+				{
+					"name": "support.function.builtin.natscript",
+					"match": "\\b(add|subtract|multiply|divide|print|first|last|length|range|append|remove|pop|round|update|get|slice|apply|reverse|exclude|sort|write)\\b"
+				}
+			]
+		},
+		"expession": {
+			"patterns": [
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#list"
+				},
+				{
+					"include": "#literal"
+				},
+				{
+					"include": "#special-variable"
+				},
+				{
+					"include": "#builtin-value"
+				},
+				{
+					"include": "#variable"
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"name": "variable.name.private.natscript",
+					"match": "(?<=set)\\s+(private\\s+)?(constant)\\s+\\b(\\w+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.modifier.natscript"
+						},
+						"2": {
+							"name": "storage.modifier.natscript"
+						},
+						"3": {
+							"name": "variable.other.constant.natscript"
+						}
+					}
+				},
+				{
+					"name": "variable.name.natscript",
+					"match": "(?<=set)\\s+(private\\s+)?\\b(\\w+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.modifier.natscript"
+						},
+						"2": {
+							"name": "variable.name.natscript"
+						}
+					}
+				},
+				{
+					"name": "variable.function.name.natscript",
+					"match": "(?<=function)\\s+\\b(\\w+)\\b"
+				},
+				{
+					"name": "support.class",
+					"match": "(?<=structure)\\s+\\b(\\w+)\\b"
+				}
+			]
+		},
+		"builtin-value": {
+			"patterns": [
+				{
+					"name": "support.type.exception.natscript",
+					"match": "\\b(RunTimeException|ValueException|TypeException|FileNotFoundException|ImportException)\\b"
+				}
+			]
+		},
+		"comment": {
+            "name": "comment.line.number-sign.natscript",
+            "begin": "(\\#)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.comment.natscript"
+                }
+            },
+            "end": "($)",
+            "patterns": [
+                {
+                    "match": "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)",
+					"captures": {
+						"1": {
+							"name": "keyword.codetag.notation.natscript"
+						}
+					}
+                }
+            ]
+        },
+		"special-variable": {
+			"name": "variable.language.special.natscript",
+			"match": "\\b(result|it|itself|content|end)\\b"
+		},
+		"skip-token": {
+			"patterns": [
+				{
+					"name": "keyword.other.skip-token.natscript",
+					"match": "\\b(and|the|that|are|is)\\b"
+				},
+				{
+					"name": "punctuation.separator.natscript",
+					"match": "(,|\\.)"
+				},
+				{
+					"include": "#non-functional-token"
+				}
+			]
+		},
+		"non-functional-token": {
+			"name": "keyword.other.non-functional.natscript",
+			"match": "\\b(as|at|by|from|out|to|than|as|of|then)\\b"
+		},
+		"string": {
+			"name": "string.quoted.double.natscript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.natscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"list": {
+            "begin": "\\[",
+            "end": "\\]",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.list.begin.natscript"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.list.end.natscript"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+		"literal": {
+            "patterns": [
+                {
+                    "name": "constant.language.natscript",
+                    "match": "\\b(true|false|nothing)\\b"
+                },
+				{
+					"name": "constant.numeric.int.natscript",
+					"match": "\\b((-)?\\d+)\\b"
+				},
+				{
+					"name": "constant.numeric.float.natscript",
+					"match": "\\b((-)?\\d+\\.\\d+)\\b"
+				}
+            ]
+        }
+	},
+	"scopeName": "source.natscript"
+}
