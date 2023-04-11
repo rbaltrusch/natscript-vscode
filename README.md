@@ -7,6 +7,8 @@ This is VS Code extension for the Natscript programming language.
 This extension currently provides the following features:
 - syntax highlighting
 
+![Natscript code example](https://github.com/rbaltrusch/pychatter/blob/master/natscript-vscode/media/example_code.PNG?raw=true)
+
 Adequate theming, improved syntax highlighting via semantic tokenization, a debugger and linter, as well as some natscript specific VS code actions are also planned.
 
 ## Requirements
