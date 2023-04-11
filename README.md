@@ -1,6 +1,6 @@
 # Natscript VS Code extension README
 
-This is VS Code extension for the [Natscript](https://github.com/rbaltrusch/python_interpreter) programming language.
+This is the VS Code extension for the [Natscript](https://github.com/rbaltrusch/python_interpreter) programming language.
 
 ## Features
 
@@ -9,7 +9,7 @@ This extension currently provides the following features:
 
 ![Natscript code example](https://github.com/rbaltrusch/natscript-vscode/blob/master/media/example_code.PNG?raw=true)
 
-Adequate theming, improved syntax highlighting via semantic tokenization, a debugger and linter, as well as some natscript specific VS code actions are also planned.
+Adequate theming, improved syntax highlighting via semantic tokenization, a debugger and a linter, as well as some Natscript specific VS code actions are also planned.
 
 ## Requirements
 
