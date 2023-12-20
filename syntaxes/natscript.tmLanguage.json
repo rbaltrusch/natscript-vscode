@@ -23,16 +23,12 @@
 					"match": "\\b(skip|break|return|if|then|else|for|each|in|while|import|from|try|catch|raise|exit)\\b"
 				},
 				{
-					"name": "keyword.operator.flow",
-					"match": "\\b(define|expecting|defaulting|call|with)\\b"
+					"name": "storage.type.function.natscript",
+					"match": "\\b(define|function|expecting|defaulting|with)\\b"
 				},
 				{
 					"name": "storage.type.class.natscript",
 					"match": "\\b(structure)\\b"
-				},
-				{
-					"name": "storage.type.function.natscript",
-					"match": "\\b(function)\\b"
 				},
 				{
 					"name": "storage.modifier.natscript",
@@ -50,7 +46,7 @@
 					"match": "\\b(set|new)\\b"
 				},
 				{
-					"name": "keyword.operator.logical.natscript",
+					"name": "support.function.builtin.logical.natscript",
 					"match": "\\b(checked|not|all|any|some|none|contains|identical|greater|less|equal)\\b"
 				},
 				{
@@ -59,7 +55,7 @@
 				},
 				{
 					"name": "support.function.builtin.natscript",
-					"match": "\\b(add|subtract|multiply|divide|print|first|last|length|range|append|remove|pop|round|update|get|slice|apply|reverse|exclude|sort|write)\\b"
+					"match": "\\b(call|add|subtract|multiply|divide|print|first|last|length|range|append|remove|pop|round|update|get|slice|apply|reverse|exclude|sort|write)\\b"
 				}
 			]
 		},
@@ -119,7 +115,7 @@
 					"match": "(?<=function)\\s+\\b(\\w+)\\b"
 				},
 				{
-					"name": "support.class",
+					"name": "support.class.natscript",
 					"match": "(?<=structure)\\s+\\b(\\w+)\\b"
 				}
 			]
