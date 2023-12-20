@@ -11,7 +11,11 @@ This extension currently provides the following features:
 
 Adequate theming, improved syntax highlighting via semantic tokenization, a debugger and linter, as well as some natscript specific VS code actions are also planned.
 
-## Requirements
+## How to install
+
+Currently, this extension is in its early stages and can only be installed manually (clone the git repository into the `%USERPROFILE%/.vscode/extensions` folder on Windows).
+
+### Requirements
 
 This extension requires you to install the [Natscript interpreter](https://github.com/rbaltrusch/python_interpreter), which itself requires a Python installation.
 
